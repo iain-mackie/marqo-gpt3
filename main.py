@@ -53,8 +53,6 @@ if __name__ == '__main__':
                     # Build marqo document
                     new_doc = {
                         '_id': doc['id'],
-                        'url': doc['url'],
-                        'domain': urlparse(doc['url']).netloc,
                         'Title': doc['title'],
                         'Description': doc['contents'],
                     }
@@ -72,11 +70,11 @@ if __name__ == '__main__':
 
     def get_no_context_prompt(query):
         """ GPT3 prompt without any context. """
-        return f'QUESTION: {query}\n\nESSAY:'
+        return f'QUESTION: {query}\n\nANSWER:'
 
     def get_context_prompt(query, context):
         """ GPT3 prompt without text-based context from marqo search. """
-        return f'QUESTION: {query}\n\nCONTEXT: {context}\n\nESSAY:'
+        return f'QUESTION: {query}\n\nCONTEXT: {context}\n\nANSWER:'
 
     def prompt_to_essay(prompt):
         """ Process GPT-3 prompt and clean string . """
@@ -111,20 +109,6 @@ if __name__ == '__main__':
     print('=========================================================')
     print('========= WITH MARQO DOCUMENT CONTEXT ===================')
     results = mq.index(DOC_INDEX_NAME).search(q=query, limit=5)
-    context = ''
-    for hit in results['hits']:
-        for section, text in hit['_highlights'].items():
-            context += text + '\n'
-    prompt = get_context_prompt(query=query, context=context)
-    print(f'Prompt: {prompt}')
-
-    essay = prompt_to_essay(prompt)
-    print(essay)
-
-    print('')
-    print('=========================================================')
-    print('=== WITH MARQO DOCUMENT CONTEXT (www.britannica.com) ====')
-    results = mq.index(DOC_INDEX_NAME).search(q=query, filter_string="domain:www.britannica.com", limit=5)
     context = ''
     for hit in results['hits']:
         for section, text in hit['_highlights'].items():
