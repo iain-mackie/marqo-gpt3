@@ -1,1 +1,2 @@
-# marqo-codec
+# Writing History Essays with Marqo + GPT3
+
