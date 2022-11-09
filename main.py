@@ -12,10 +12,10 @@ openai.api_key = None
 DOC_INDEX_NAME = 'news-index'
 output = './logs.txt'
 queries = [
-    # question                                  # date filter   # website filter
-    ('What is happening in business today?',    '2022-11-09',   None ),
-    ('How is the US Midterm Election going?',   None,           None ),
-    ('What happened in UK yesterday?',          '2022-11-08',   'www.bbc.co.uk'),
+    # question                                              # date filter
+    ('What is happening in business today?',                '2022-11-09'),
+    ('How is the US Midterm Election going?',               None,        ),
+    ('What happened with technology companies yesterday?',  '2022-11-08'),
 ]
 
 
@@ -42,21 +42,17 @@ if __name__ == '__main__':
     ######################### GPT3 GENERATION ###############################
     #########################################################################
 
-    def get_no_context_prompt(question, date, website):
+    def get_no_context_prompt(question, date):
         """ GPT3 prompt without any context. """
         if not date:
             date = 'Unknown'
-        if not website:
-            website = 'Unknown'
-        return f'Title: {question}\n\nDate: {date}, Website: {website}\n\nNews summary:'
+        return f'Date: {date}\n\nQuestions: {question}\n\nSummary:'
 
-    def get_context_prompt(question, date, website, context):
+    def get_context_prompt(question, date, context):
         """ GPT3 prompt without text-based context from marqo search. """
         if not date:
             date = 'Unknown'
-        if not website:
-            website = 'Unknown'
-        return f'Title: {question}\n\nDate: {date}, Website: {website}\n\nBackground:{context}\n\nNews summary:'
+        return f'Date: {date}\n\nBackground:{context}\n\nQuestions: {question}\n\nSummary:'
 
     def prompt_to_essay(prompt):
         """ Process GPT-3 prompt and clean string . """
@@ -76,41 +72,33 @@ if __name__ == '__main__':
     ########################### EXPERIMENTS ################################
     #########################################################################
 
+    # Write to log.txt for analysis.
     with open(output, 'w') as f_out:
-        for question, date, website in queries:
+        for question, date in queries:
             f_out.write('////////////////////////////////////////////////////////\n')
             f_out.write('////////////////////////////////////////////////////////\n')
 
-            f_out.write(f'question: {question}, date: {date}, website: {website}\n')
+            f_out.write(f'question: {question}, date: {date}\n')
 
             f_out.write('================= GPT3 NO CONTEXT ======================\n')
             # Build prompt without context.
-            prompt = get_no_context_prompt(question, date, website)
+            prompt = get_no_context_prompt(question, date)
             f_out.write(f'Prompt: {prompt}\n')
             summary = prompt_to_essay(prompt)
             f_out.write(f'{summary}\n\n')
 
             f_out.write('================= GPT3 + Marqo  =======================\n')
             # Query Marqo and set filters based on user query
-            if isinstance(date, str) and isinstance(website, str):
-                results = mq.index(DOC_INDEX_NAME).search(q=question,
-                                                          searchable_attributes=['Title', 'Description'],
-                                                          filter_string=f"date:{date} AND website: {website}",
-                                                          limit=5)
-            elif isinstance(date, str):
+            if isinstance(date, str):
                 results = mq.index(DOC_INDEX_NAME).search(q=question,
                                                           searchable_attributes=['Title', 'Description'],
                                                           filter_string=f"date:{date}",
-                                                          limit=5)
-            elif isinstance(website, str):
-                results = mq.index(DOC_INDEX_NAME).search(q=question,
-                                                          searchable_attributes=['Title', 'Description'],
-                                                          filter_string=f"website: {website}",
                                                           limit=5)
             else:
                 results = mq.index(DOC_INDEX_NAME).search(q=question,
                                                           searchable_attributes=['Title', 'Description'],
                                                           limit=5)
+
             # Build context using Marqo's highlighting functionality.
             context = ''
             for hit in results['hits']:
@@ -120,7 +108,6 @@ if __name__ == '__main__':
             # Build prompt with Marqo context.
             prompt = get_context_prompt(question=question,
                                         date=date,
-                                        website=website,
                                         context=context)
             f_out.write(f'Prompt: {prompt}\n')
             summary = prompt_to_essay(prompt)

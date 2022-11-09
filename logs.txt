@@ -1,18 +1,16 @@
 ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
-question: What is happening in business today?, date: 2022-11-09, website: None
+question: What is happening in business today?, date: 2022-11-09
 ================= GPT3 NO CONTEXT ======================
-Prompt: Title: What is happening in business today?
+Prompt: Date: 2022-11-09
 
-Date: 2022-11-09, Website: Unknown
+Questions: What is happening in business today?
 
-News summary:
-In business today, there is a lot of change happening. Companies are starting to move away from traditional business models and are instead adopting more modern, innovative approaches. This is resulting in a lot of new opportunities for businesses to grow and succeed. There is also a lot of competition in the marketplace, which is driving companies to be more creative and innovative in their approach to marketing and product development. Overall, business is booming and there are a lot of exciting things happening.
+Summary:
+The business world is constantly changing and evolving. Today, businesses are faced with new challenges and opportunities. In order to stay competitive, businesses must continually adapt and change. Some of the biggest changes that businesses are facing today include the rise of the gig economy, the growth of the sharing economy, and the increasing importance of data and analytics.
 
 ================= GPT3 + Marqo  =======================
-Prompt: Title: What is happening in business today?
-
-Date: 2022-11-09, Website: Unknown
+Prompt: Date: 2022-11-09
 
 Background:Meta, which owns Facebook, Instagram and WhatsApp, has announced that it will cut 13% of its workforce. The first mass lay-offs in the firm's history will result in 11,000 employees, from a worldwide headcount of 87,000, losing their jobs.
 Furniture firm Made collapse: Customers in the dark over refunds
@@ -21,24 +19,24 @@ Musk's latest share sale fueled jitters about the fallout of his Twitter buy on 
 Shares in Walt Disney Co (DIS.N) tumbled 12% to the lowest since March 2020 on Wednesday, as ballooning costs at the entertainment giant's fast-growing streaming division cast a shadow on strong subscriber additions. Disney+ has attracted millions of subscribers and will launch an ad-supported tier next month, but executives' promise of profitability next year and forecast for operating results in the next quarter failed to impress.
 
 
-News summary:
-1. Meta, which owns Facebook, Instagram and WhatsApp, is cutting 13% of its workforce, resulting in 11,000 employees losing their jobs.  2. Furniture firm Made collapse: Customers in the dark over refunds.  3. Results are being declared in the US midterm elections, with control of Congress hanging in the balance.  4. Musk's latest share sale fueled jitters about the fallout of his Twitter buy on the world's most valuable automaker, analysts said.  5. Shares in Walt Disney Co (DIS.N) tumbled 12% to the lowest since March 2020 on Wednesday, as ballooning costs at the entertainment giant's fast-growing streaming division cast a shadow on strong subscriber additions.
+Questions: What is happening in business today?
+
+Summary:
+1. Meta is cutting 13% of its workforce, resulting in 11,000 employees losing their jobs. 2. Furniture firm Made collapse: Customers in the dark over refunds. 3. Results are being declared in the US midterm elections, with control of Congress hanging in the balance. 4. Musk's latest share sale fueled jitters about the fallout of his Twitter buy on the world's most valuable automaker, analysts said. 5. Shares in Walt Disney Co (DIS.N) tumbled 12% to the lowest since March 2020 on Wednesday, as ballooning costs at the entertainment giant's fast-growing streaming division cast a shadow on strong subscriber additions.
 
 ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
-question: How is the US Midterm Election going?, date: None, website: None
+question: How is the US Midterm Election going?, date: None
 ================= GPT3 NO CONTEXT ======================
-Prompt: Title: How is the US Midterm Election going?
+Prompt: Date: Unknown
 
-Date: Unknown, Website: Unknown
+Questions: How is the US Midterm Election going?
 
-News summary:
-The US Midterm Election is going well so far. There have been no major problems reported and turnout seems to be high.
+Summary:
+The US Midterm Election is going well.
 
 ================= GPT3 + Marqo  =======================
-Prompt: Title: How is the US Midterm Election going?
-
-Date: Unknown, Website: Unknown
+Prompt: Date: Unknown
 
 Background:Results are being declared in the US midterm elections, with control of Congress hanging in the balance. Republicans are likely to take control of the House of Representatives but the Senate fight is on a knife-edge.
 As voters across the US wake up on Wednesday morning after the election, the results of the 2022 midterms are not yet completely clear - with officials across the country warning that elections may drag on for days or weeks. The expected delays are the result of a number of factors, including razor-thin margins between candidates, potentially contested elections, the possibility of recounts and even a likely run-off in Georgia - a key Senate battleground.
@@ -47,31 +45,34 @@ Meta chief executive Mark Zuckerberg said the cuts were "the most difficult chan
 Leaders of countries flooded or parched due to climate change are pleading at the COP27 summit for an urgent financial lifeline from richer nations. "We will not give up... the alternative consigns us to a watery grave," Bahamas Prime Minister Philip Davis said.Countries are meeting in Sharm el-Sheikh, Egypt to discuss next steps in curbing climate change.
 
 
-News summary:
-The US midterm elections are still ongoing, with results expected to come in later today. Republicans are expected to take control of the House of Representatives, but the Senate is still up for grabs. In the meantime, leaders of countries affected by climate change are pleading for financial assistance from richer nations at the COP27 summit.
+Questions: How is the US Midterm Election going?
+
+Summary:
+The US Midterm Election is still ongoing, with the results not yet clear. Republicans are expected to take control of the House of Representatives, but the Senate race is still too close to call. There may be delays in the results due to a number of factors, including razor-thin margins between candidates, potentially contested elections, the possibility of recounts and even a likely run-off in Georgia.
 
 ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
-question: What happened in UK yesterday?, date: 2022-11-08, website: www.bbc.co.uk
+question: What happened with technology companies yesterday?, date: 2022-11-08
 ================= GPT3 NO CONTEXT ======================
-Prompt: Title: What happened in UK yesterday?
+Prompt: Date: 2022-11-08
 
-Date: 2022-11-08, Website: www.bbc.co.uk
+Questions: What happened with technology companies yesterday?
 
-News summary:
-Yesterday was a historic day for the United Kingdom as the country formally left the European Union after 47 years of membership. The UK is now the first and only country to have ever left the EU.  The process of the UK leaving the EU, commonly known as Brexit, has been a long and complex one. It began with a referendum in 2016 in which 52% of voters voted to leave the EU. This was followed by a period of negotiations between the UK and the EU, during which the UK formally triggered Article 50 of the Lisbon Treaty, the legal mechanism for leaving the EU.  The UK then left the EU on 31 January 2020, after which it entered into a transition period during which it negotiated a new trade deal with the EU. This trade deal was finally agreed on 24 December 2020, just days before the end of the transition period.  Yesterday, 8 November 2020, the UK formally left the EU and began a new chapter as an independent country.
+Summary:
+Technology companies had a mixed day on the stock market yesterday. Some, like Apple, saw their stock prices rise, while others, like Amazon, saw their stock prices fall. Overall, the sector was down slightly for the day.
 
 ================= GPT3 + Marqo  =======================
-Prompt: Title: What happened in UK yesterday?
+Prompt: Date: 2022-11-08
 
-Date: 2022-11-08, Website: www.bbc.co.uk
-
-Background:US election results: When will we know who won?
+Background:The specific employees losing their jobs will be informed over the course of the morning, the report said. Meta's head of human resources, Lori Goler, said employees who lose their jobs will be provided with at least four months of salary as severance, the WSJ reported, citing people familiar with the matter.
+Reuters) - The U.S. Supreme Court on Tuesday heard arguments over whether states can require corporations to consent to the jurisdiction of their courts when they register to do business in the state, in a case that could dramatically expand state courts' jurisdiction over corporations around the country. The dispute arises from a petition by Virginia resident Robert Mallory, who asked the nation's top court to revive his lawsuit in Pennsylvania state court against his former employer, Virginia-based Norfolk Southern Railway Co, claiming he developed colon cancer because of asbestos exposure on the job.
 It was unaware of any injuries or deaths in connection with the problem, it said. However, 314 vehicle alerts have been issued for US vehicles that may be related to the recall.
-When will I get the £400 energy discount? The support, totalling £650, is for those across the UK on certain benefits, including Universal Credit and pension credit.
-Leaders from 120 countries are meeting in Sharm el-Sheikh, Egypt to discuss next steps in curbing climate change. Key topics are compensation and support for the most-affected countries.
+COP27: UAE and Egypt agree to build one of world's biggest wind farms
+US election results: When will we know who won?
 
 
-News summary:
-The US election results are still not in, but there are 314 vehicle alerts issued for US vehicles that may be related to the recall. In the UK, leaders from 120 countries are meeting in Sharm el-Sheikh, Egypt to discuss next steps in curbing climate change.
+Questions: What happened with technology companies yesterday?
+
+Summary:
+Technology companies were in the news yesterday due to a variety of reasons. First, the Supreme Court heard arguments over whether states can require corporations to consent to the jurisdiction of their courts when they register to do business in the state. This case could have major implications for corporations around the country. Second, Meta, a technology company, announced that it was laying off a significant number of employees. Finally, COP27, the UN Climate Change Conference, is underway, and the UAE and Egypt have announced plans to build one of the world's biggest wind farms.
 
