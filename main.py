@@ -2,64 +2,38 @@
 import marqo
 import json
 import openai
-from urllib.parse import urlparse
 
-TARGET_QID = 'history-12'
-TOPICS_PATH = './data/CODEC/topics/topics.json'
-DOC_QRELS_PATH = './data/CODEC/qrels/document_binary.qrels'
-DOC_CORPUS_PATH = './data/document_corpus/codec_documents.jsonl'
-DOC_INDEX_NAME = f'codec-{TARGET_QID}-doc-index'
+from news import MARQO_DOCUMENTS
 
 # init GPT3 API
 openai.organization = None
 openai.api_key = None
+
+DOC_INDEX_NAME = 'news-index'
+output = './logs.txt'
+queries = [
+    # question                                  # date filter   # website filter
+    ('What is happening in business today?',    '2022-11-09',   None ),
+    ('How is the US Midterm Election going?',   None,           None ),
+    ('What happened in UK yesterday?',          '2022-11-08',   'www.bbc.co.uk'),
+]
+
 
 if __name__ == '__main__':
 
     print('Establishing connection to marqo client.')
     mq = marqo.Client(url='http://localhost:8882')
 
-    print('loading CODEC topics')
-    with open(TOPICS_PATH, 'r') as f_top:
-        topics = json.load(f_top)
-
     #########################################################################
     ######################### MARQO INDEXING ################################
     #########################################################################
-
-    def get_target_docids(qrels_path):
-        """ Get dict of docids that are relevant for TARGET_QID. """
-        target_docids = {}
-        with open(qrels_path, 'r') as f_doc_qrels:
-            for line in f_doc_qrels:
-                qid, _, docid, R = line.strip().split()
-                if (qid == TARGET_QID) and (int(R) == 1):
-                    target_docids[docid] = None
-        return target_docids
-
     try:
         print(f'document index build: {mq.index(DOC_INDEX_NAME).get_stats()}')
     except KeyboardInterrupt:
         raise
     except:
-        print('*** Building document index ***')
-        target_docids = get_target_docids(qrels_path=DOC_QRELS_PATH)
-        marqo_documents = []
-        batch = 0
-        with open(DOC_CORPUS_PATH, 'r') as f_doc_corpus:
-            for line in f_doc_corpus:
-                doc = json.loads(line)
-                if doc['id'] in target_docids:
-                    # Build marqo document
-                    new_doc = {
-                        '_id': doc['id'],
-                        'Title': doc['title'],
-                        'Description': doc['contents'],
-                    }
-                    marqo_documents.append(new_doc)
-
         print('Indexing documents')
-        mq.index(DOC_INDEX_NAME).add_documents(marqo_documents)
+        mq.index(DOC_INDEX_NAME).add_documents(MARQO_DOCUMENTS)
         print('Done')
 
     # mq.index(DOC_INDEX_NAME).delete()
@@ -68,20 +42,28 @@ if __name__ == '__main__':
     ######################### GPT3 GENERATION ###############################
     #########################################################################
 
-    def get_no_context_prompt(query):
+    def get_no_context_prompt(question, date, website):
         """ GPT3 prompt without any context. """
-        return f'QUESTION: {query}\n\nANSWER:'
+        if not date:
+            date = 'Unknown'
+        if not website:
+            website = 'Unknown'
+        return f'Title: {question}\n\nDate: {date}, Website: {website}\n\nNews summary:'
 
-    def get_context_prompt(query, context):
+    def get_context_prompt(question, date, website, context):
         """ GPT3 prompt without text-based context from marqo search. """
-        return f'QUESTION: {query}\n\nCONTEXT: {context}\n\nANSWER:'
+        if not date:
+            date = 'Unknown'
+        if not website:
+            website = 'Unknown'
+        return f'Title: {question}\n\nDate: {date}, Website: {website}\n\nBackground:{context}\n\nNews summary:'
 
     def prompt_to_essay(prompt):
         """ Process GPT-3 prompt and clean string . """
         response = openai.Completion.create(
             engine="text-davinci-002",
             prompt=prompt,
-            temperature=0.7,
+            temperature=0.0,
             max_tokens=256,
             top_p=1.0,
             frequency_penalty=0.0,
@@ -90,31 +72,57 @@ if __name__ == '__main__':
         return response['choices'][0]['text'].strip().replace('\n', ' ')
 
 
-    query = topics[TARGET_QID]['Query']
-    narrative = topics[TARGET_QID]['Guidelines']
-    print(f'qid: {TARGET_QID}')
-    print(f'QUERY: {query}')
-    print(f'DOMAIN EXPERT ANSWER: {narrative}')
+    #########################################################################
+    ########################### EXPERIMENTS ################################
+    #########################################################################
 
-    print('')
-    print('========================================================')
-    print('====================== NO CONTEXT ======================')
-    prompt = get_no_context_prompt(query=query)
-    print(f'Prompt: {prompt}')
+    with open(output, 'w') as f_out:
+        for question, date, website in queries:
+            f_out.write('////////////////////////////////////////////////////////\n')
+            f_out.write('////////////////////////////////////////////////////////\n')
 
-    essay = prompt_to_essay(prompt)
-    print(essay)
+            f_out.write(f'question: {question}, date: {date}, website: {website}\n')
 
-    print('')
-    print('=========================================================')
-    print('========= WITH MARQO DOCUMENT CONTEXT ===================')
-    results = mq.index(DOC_INDEX_NAME).search(q=query, limit=5)
-    context = ''
-    for hit in results['hits']:
-        for section, text in hit['_highlights'].items():
-            context += text + '\n'
-    prompt = get_context_prompt(query=query, context=context)
-    print(f'Prompt: {prompt}')
+            f_out.write('================= GPT3 NO CONTEXT ======================\n')
+            # Build prompt without context.
+            prompt = get_no_context_prompt(question, date, website)
+            f_out.write(f'Prompt: {prompt}\n')
+            summary = prompt_to_essay(prompt)
+            f_out.write(f'{summary}\n\n')
 
-    essay = prompt_to_essay(prompt)
-    print(essay)
+            f_out.write('================= GPT3 + Marqo  =======================\n')
+            # Query Marqo and set filters based on user query
+            if isinstance(date, str) and isinstance(website, str):
+                results = mq.index(DOC_INDEX_NAME).search(q=question,
+                                                          searchable_attributes=['Title', 'Description'],
+                                                          filter_string=f"date:{date} AND website: {website}",
+                                                          limit=5)
+            elif isinstance(date, str):
+                results = mq.index(DOC_INDEX_NAME).search(q=question,
+                                                          searchable_attributes=['Title', 'Description'],
+                                                          filter_string=f"date:{date}",
+                                                          limit=5)
+            elif isinstance(website, str):
+                results = mq.index(DOC_INDEX_NAME).search(q=question,
+                                                          searchable_attributes=['Title', 'Description'],
+                                                          filter_string=f"website: {website}",
+                                                          limit=5)
+            else:
+                results = mq.index(DOC_INDEX_NAME).search(q=question,
+                                                          searchable_attributes=['Title', 'Description'],
+                                                          limit=5)
+            # Build context using Marqo's highlighting functionality.
+            context = ''
+            for hit in results['hits']:
+                print(hit['Description'])
+                for section, text in hit['_highlights'].items():
+                    context += text + '\n'
+            # Build prompt with Marqo context.
+            prompt = get_context_prompt(question=question,
+                                        date=date,
+                                        website=website,
+                                        context=context)
+            f_out.write(f'Prompt: {prompt}\n')
+            summary = prompt_to_essay(prompt)
+            f_out.write(f'{summary}\n\n')
+
