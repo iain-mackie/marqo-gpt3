@@ -1,0 +1,77 @@
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+question: What is happening in business today?, date: 2022-11-09, website: None
+================= GPT3 NO CONTEXT ======================
+Prompt: Title: What is happening in business today?
+
+Date: 2022-11-09, Website: Unknown
+
+News summary:
+In business today, there is a lot of change happening. Companies are starting to move away from traditional business models and are instead adopting more modern, innovative approaches. This is resulting in a lot of new opportunities for businesses to grow and succeed. There is also a lot of competition in the marketplace, which is driving companies to be more creative and innovative in their approach to marketing and product development. Overall, business is booming and there are a lot of exciting things happening.
+
+================= GPT3 + Marqo  =======================
+Prompt: Title: What is happening in business today?
+
+Date: 2022-11-09, Website: Unknown
+
+Background:Meta, which owns Facebook, Instagram and WhatsApp, has announced that it will cut 13% of its workforce. The first mass lay-offs in the firm's history will result in 11,000 employees, from a worldwide headcount of 87,000, losing their jobs.
+Furniture firm Made collapse: Customers in the dark over refunds
+Results are being declared in the US midterm elections, with control of Congress hanging in the balance. Republicans are likely to take control of the House of Representatives but the Senate fight is on a knife-edge.
+Musk's latest share sale fueled jitters about the fallout of his Twitter buy on the world's most valuable automaker, analysts said. The billionaire's recent acquisition of Twitter sparked investor concerns including whether he would be distracted from running Tesla or divert resources to the social media company.
+Shares in Walt Disney Co (DIS.N) tumbled 12% to the lowest since March 2020 on Wednesday, as ballooning costs at the entertainment giant's fast-growing streaming division cast a shadow on strong subscriber additions. Disney+ has attracted millions of subscribers and will launch an ad-supported tier next month, but executives' promise of profitability next year and forecast for operating results in the next quarter failed to impress.
+
+
+News summary:
+1. Meta, which owns Facebook, Instagram and WhatsApp, is cutting 13% of its workforce, resulting in 11,000 employees losing their jobs.  2. Furniture firm Made collapse: Customers in the dark over refunds.  3. Results are being declared in the US midterm elections, with control of Congress hanging in the balance.  4. Musk's latest share sale fueled jitters about the fallout of his Twitter buy on the world's most valuable automaker, analysts said.  5. Shares in Walt Disney Co (DIS.N) tumbled 12% to the lowest since March 2020 on Wednesday, as ballooning costs at the entertainment giant's fast-growing streaming division cast a shadow on strong subscriber additions.
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+question: How is the US Midterm Election going?, date: None, website: None
+================= GPT3 NO CONTEXT ======================
+Prompt: Title: How is the US Midterm Election going?
+
+Date: Unknown, Website: Unknown
+
+News summary:
+The US Midterm Election is going well so far. There have been no major problems reported and turnout seems to be high.
+
+================= GPT3 + Marqo  =======================
+Prompt: Title: How is the US Midterm Election going?
+
+Date: Unknown, Website: Unknown
+
+Background:Results are being declared in the US midterm elections, with control of Congress hanging in the balance. Republicans are likely to take control of the House of Representatives but the Senate fight is on a knife-edge.
+As voters across the US wake up on Wednesday morning after the election, the results of the 2022 midterms are not yet completely clear - with officials across the country warning that elections may drag on for days or weeks. The expected delays are the result of a number of factors, including razor-thin margins between candidates, potentially contested elections, the possibility of recounts and even a likely run-off in Georgia - a key Senate battleground.
+Republicans made modest gains in U.S. midterm elections but Democrats performed better than expected, as control of the Senate hinged on three races that remained too close to call on Wednesday afternoon. The Georgia U.S. Senate race between Democratic incumbent Raphael Warnock and Republican Herschel Walker will go to a Dec. 6 runoff, Edison Research projected.
+Meta chief executive Mark Zuckerberg said the cuts were "the most difficult changes we've made in Meta's history". The news follows major lay-offs at Twitter, which cut about half its staff, and other tech firms.
+Leaders of countries flooded or parched due to climate change are pleading at the COP27 summit for an urgent financial lifeline from richer nations. "We will not give up... the alternative consigns us to a watery grave," Bahamas Prime Minister Philip Davis said.Countries are meeting in Sharm el-Sheikh, Egypt to discuss next steps in curbing climate change.
+
+
+News summary:
+The US midterm elections are still ongoing, with results expected to come in later today. Republicans are expected to take control of the House of Representatives, but the Senate is still up for grabs. In the meantime, leaders of countries affected by climate change are pleading for financial assistance from richer nations at the COP27 summit.
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+question: What happened in UK yesterday?, date: 2022-11-08, website: www.bbc.co.uk
+================= GPT3 NO CONTEXT ======================
+Prompt: Title: What happened in UK yesterday?
+
+Date: 2022-11-08, Website: www.bbc.co.uk
+
+News summary:
+Yesterday was a historic day for the United Kingdom as the country formally left the European Union after 47 years of membership. The UK is now the first and only country to have ever left the EU.  The process of the UK leaving the EU, commonly known as Brexit, has been a long and complex one. It began with a referendum in 2016 in which 52% of voters voted to leave the EU. This was followed by a period of negotiations between the UK and the EU, during which the UK formally triggered Article 50 of the Lisbon Treaty, the legal mechanism for leaving the EU.  The UK then left the EU on 31 January 2020, after which it entered into a transition period during which it negotiated a new trade deal with the EU. This trade deal was finally agreed on 24 December 2020, just days before the end of the transition period.  Yesterday, 8 November 2020, the UK formally left the EU and began a new chapter as an independent country.
+
+================= GPT3 + Marqo  =======================
+Prompt: Title: What happened in UK yesterday?
+
+Date: 2022-11-08, Website: www.bbc.co.uk
+
+Background:US election results: When will we know who won?
+It was unaware of any injuries or deaths in connection with the problem, it said. However, 314 vehicle alerts have been issued for US vehicles that may be related to the recall.
+When will I get the £400 energy discount? The support, totalling £650, is for those across the UK on certain benefits, including Universal Credit and pension credit.
+Leaders from 120 countries are meeting in Sharm el-Sheikh, Egypt to discuss next steps in curbing climate change. Key topics are compensation and support for the most-affected countries.
+
+
+News summary:
+The US election results are still not in, but there are 314 vehicle alerts issued for US vehicles that may be related to the recall. In the UK, leaders from 120 countries are meeting in Sharm el-Sheikh, Egypt to discuss next steps in curbing climate change.
+
