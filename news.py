@@ -111,6 +111,35 @@ MARQO_DOCUMENTS = [
         'Title': 'Supreme Court urged to reject Pennsylvania\'s \'consent-by-registration\' law',
         'Description': 'Reuters) - The U.S. Supreme Court on Tuesday heard arguments over whether states can require corporations to consent to the jurisdiction of their courts when they register to do business in the state, in a case that could dramatically expand state courts\' jurisdiction over corporations around the country. The dispute arises from a petition by Virginia resident Robert Mallory, who asked the nation\'s top court to revive his lawsuit in Pennsylvania state court against his former employer, Virginia-based Norfolk Southern Railway Co, claiming he developed colon cancer because of asbestos exposure on the job. Pennsylvania had a statute requiring companies to consent to its courts\' jurisdiction when they register to do business there. Norfolk Southern, one of the nation\'s largest railway operators, maintained that the law violates its due process rights under the U.S. Constitution\'s 14th Amendment. The Pennsylvania Supreme Court agreed, affirming the trial court\'s dismissal of Mallory\'s case. "Fidelity to the original public meaning of the 14th Amendment in this case means that the flesh-and-blood little guy wins and the Fortune 500 company loses," Ashley Keller of Keller Postman, a lawyer for Mallory, told the justices on Tuesday, urging them to reverse.'
     },
+    {
+        '_id': '17',
+        'date': '2022-11-09',
+        'website': 'www.reuters.com',
+        'Title': 'Show us the money: Developing world at COP27 seeks financing details',
+        'Description': 'Finance took centre stage at the COP27 climate talks on Wednesday, with U.N. experts publishing a list of projects worth $120 billion that investors could back to help poorer countries cut emissions and adapt to the impacts of global warming. A $3 billion water transfer project between Lesotho and Botswana and a $10 million plan to improve the public water system in Mauritius were among dozens of projects listed, including 19 in Africa.We can now show that a meaningful pipeline of investible opportunities does exist across the economies that need finance most," Mahmoud Mohieldin, one of the U.N. appointed experts, known as U.N. Climate Change High-Level Champions, said in a statement to accompany the report. n an effort to answer the argument by private sector financiers that it\'s too risky to invest more in emerging markets, the experts, who help the COP host-governments engage with business, pulled together a list of projects that could be funded more quickly.'
+    },
+    {
+        '_id': '18',
+        'date': '2022-11-09',
+        'website': 'www.reuters.com',
+        'Title': 'Control of U.S. Congress unclear as Republican \'red wave\' fizzles',
+        'Description': 'Republicans made modest gains in U.S. midterm elections but Democrats performed better than expected, as control of the Senate hinged on three races that remained too close to call on Wednesday afternoon. The Georgia U.S. Senate race between Democratic incumbent Raphael Warnock and Republican Herschel Walker will go to a Dec. 6 runoff, Edison Research projected. That means it could be weeks until control of that chamber is known, unless Democrats hold off challengers in Nevada and Arizona. Republicans picked up at least eight seats in the U.S. House of Representatives, Edison Research projected. That would be three more than needed to wrest control of the chamber from Democrats, though with 44 races still uncalled the Republican margin could go up or down and might not be resolved for days. Even a slim House majority would let Republicans hem in Democratic President Joe Biden during his next two years in office, blocking legislation and launching potentially politically damaging investigations.',
+    },
+    {
+        '_id': '19',
+        'date': '2022-11-09',
+        'website': 'www.reuters.com',
+        'Title': 'Allianz beats quarterly profit expectations, posts rosier 2022 outlook',
+        'Description': 'German insurer Allianz on Wednesday posted a better-than-expected 17% rise in third-quarter net profit, helped by strength at its property and casualty division, and gave a more optimistic full-year outlook.'
+    },
+    {
+        '_id': '20',
+        'date': '2022-11-09',
+        'website': 'www.bbc.co.uk',
+        'Title': 'What is COP27 and why is it important?',
+        'Description': 'World leaders are discussing action to tackle climate change at the COP27 climate summit in Egypt. It follows a year of climate-related disasters and broken temperature records. UK Prime Minister Rishi Sunak is attending, having previously said he would not. United Nations (UN) climate summits are held every year, for governments to agree steps to limit global temperature rises. They are referred to as COPs, which stands for "Conference of the Parties". The parties are the attending countries that signed up to the original UN climate agreement in 1992. COP27 is the 27th annual UN meeting on climate. It is taking place in Sharm el-Sheikh until 18 November.'
+    },
+
 ]
 
 

@@ -10,12 +10,13 @@ openai.organization = None
 openai.api_key = None
 
 DOC_INDEX_NAME = 'news-index'
-output = './logs.txt'
+output = './news_summaries.txt'
 queries = [
     # question                                              # date filter
+    ('How is the US Midterm Election going?',               None),
+    ('How is COP27 progressing?',                           None),
     ('What is happening in business today?',                '2022-11-09'),
-    ('How is the US Midterm Election going?',               None,        ),
-    ('What happened with technology companies yesterday?',  '2022-11-08'),
+
 ]
 
 
@@ -27,6 +28,7 @@ if __name__ == '__main__':
     #########################################################################
     ######################### MARQO INDEXING ################################
     #########################################################################
+    # mq.index(DOC_INDEX_NAME).delete()
     try:
         print(f'document index build: {mq.index(DOC_INDEX_NAME).get_stats()}')
     except KeyboardInterrupt:
@@ -36,23 +38,18 @@ if __name__ == '__main__':
         mq.index(DOC_INDEX_NAME).add_documents(MARQO_DOCUMENTS)
         print('Done')
 
-    # mq.index(DOC_INDEX_NAME).delete()
 
     #########################################################################
     ######################### GPT3 GENERATION ###############################
     #########################################################################
 
-    def get_no_context_prompt(question, date):
+    def get_no_context_prompt(question):
         """ GPT3 prompt without any context. """
-        if not date:
-            date = 'Unknown'
-        return f'Date: {date}\n\nQuestions: {question}\n\nSummary:'
+        return f'Question: {question}\n\nAnswer:'
 
-    def get_context_prompt(question, date, context):
+    def get_context_prompt(question, context):
         """ GPT3 prompt without text-based context from marqo search. """
-        if not date:
-            date = 'Unknown'
-        return f'Date: {date}\n\nBackground:{context}\n\nQuestions: {question}\n\nSummary:'
+        return f'Background: \n{context}\n\nQuestion: {question}\n\nAnswer:'
 
     def prompt_to_essay(prompt):
         """ Process GPT-3 prompt and clean string . """
@@ -72,18 +69,18 @@ if __name__ == '__main__':
     ########################### EXPERIMENTS ################################
     #########################################################################
 
-    # Write to log.txt for analysis.
+    # Write to news_summaries.txt for analysis.
     with open(output, 'w') as f_out:
         for question, date in queries:
             f_out.write('////////////////////////////////////////////////////////\n')
             f_out.write('////////////////////////////////////////////////////////\n')
 
-            f_out.write(f'question: {question}, date: {date}\n')
+            f_out.write(f'question: {question}, date filter: {date}\n')
 
             f_out.write('================= GPT3 NO CONTEXT ======================\n')
             # Build prompt without context.
-            prompt = get_no_context_prompt(question, date)
-            f_out.write(f'Prompt: {prompt}\n')
+            prompt = get_no_context_prompt(question)
+            f_out.write(f'Prompt: \n{prompt}\n')
             summary = prompt_to_essay(prompt)
             f_out.write(f'{summary}\n\n')
 
@@ -101,15 +98,15 @@ if __name__ == '__main__':
 
             # Build context using Marqo's highlighting functionality.
             context = ''
-            for hit in results['hits']:
-                print(hit['Description'])
-                for section, text in hit['_highlights'].items():
-                    context += text + '\n'
+            for i, hit in enumerate(results['hits']):
+                title =  hit['Title']
+                text = hit['Description']
+                # for section, text in hit['_highlights'].items():
+                #     context += text + '\n'
+                context += f'Source {i}) {title} || {" ".join(text.split()[:60])}... \n'
             # Build prompt with Marqo context.
-            prompt = get_context_prompt(question=question,
-                                        date=date,
-                                        context=context)
-            f_out.write(f'Prompt: {prompt}\n')
+            prompt = get_context_prompt(question=question, context=context)
+            f_out.write(f'Prompt: \n{prompt}\n')
             summary = prompt_to_essay(prompt)
             f_out.write(f'{summary}\n\n')
 
