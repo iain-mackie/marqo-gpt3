@@ -82,6 +82,7 @@ We insert Marqo's search results into GPT3 prompt as context and we get:
 ```
 Background: 
 Source 0) Facebook-owner Meta to cut 11,000 staff || Meta, which owns Facebook, Instagram and WhatsApp, has announced that it will cut 13% of its workforce.... 
+Source 1) Allianz beats quarterly profit expectations, posts rosier 2022 outlook || German insurer Allianz on Wednesday posted a better-than-expected 17% rise in third-quarter net profit...
 Source 2) Furniture firm Made collapse: Customers in the dark over refunds || Online furniture firm Made.com has gone into administration, leading to hundreds of job losses and leaving customers in the dark over refunds.... 
 Source 3) Georgia race goes to run-off as fight for US Senate neck-and-neck || Results are being declared in the US midterm elections, with control of Congress hanging in the balance.... 
 Source 4) Tesla stock hits 2-year low after Musk sells $4 bln worth of shares || Tesla Inc (TSLA.O) shares slid to their lowest level in nearly two years on Wednesday after Chief Executive Elon Musk sold $3.95 billion worth of shares in the electric-vehicle maker.. 
@@ -92,3 +93,12 @@ Question: What is happening in business today?
 Answer:
 There are a few major stories in business today. Firstly, Facebook-owner Meta is cutting 11,000 staff. This is the first mass lay-off in the company's history and will result in a 13% reduction of the worldwide headcount. Secondly, German insurer Allianz has posted better-than-expected quarterly results and given a more optimistic full-year outlook. Finally, online furniture firm Made.com has gone into administration, leading to hundreds of job losses and leaving customers in the dark over refunds.
 ```
+
+You'll notice that using Marqo to add relevant and temporally correct context means we can build a news summarisation application with ease. So instead of wrong and vague answers, we get factually-grounded summaries based on retrieved facts such as:
+<ol>
+  <li>C"Facebook-owner Meta is cutting 11,000 staff"</li>
+  <li>"German insurer Allianz has posted better-than-expected quarterly results"</li>
+  <li>"Made.com has gone into administration"</li>
+</ol>
+
+Full code: <a href="https://github.com/iain-mackie/marqo-gpt3/blob/main/main.py">here</a> (you'll need GPT3 API token)
