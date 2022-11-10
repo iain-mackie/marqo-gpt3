@@ -13,7 +13,7 @@ Given my passion for startups and NLP...I could not be happier to announce Creat
 More than just the technology, we are backing two incredible founders. Jesse has a PhD in Physics from La Trogue, Postdocs at UCL and Stanford, and was a Lead Machine Learning Scientist at Alexa and Amazon Robotics. Tom Hamer has software degrees from Australian National University and Cambridge, and was a software engineer within AWS' ElasticSearch and Database teams. Together, they have built a team of search enthusiasts with the passion and skillset to enable developers worldwide effortless access to neural search. 
 
 <p align="center">
-    <img src="https://github.com/iain-mackie/marqo-gpt3/blob/main/assets/marqo_photo.jpeg" alt="Jesse & Tom" width="300" height="600" >
+    <img src="https://github.com/iain-mackie/marqo-gpt3/blob/main/assets/marqo_photo.jpeg" alt="Jesse & Tom" width="400" height="600" >
 
 
 Marqo's open-source Github <a href="https://github.com/marqo-ai/marqo">Github</a> has reached 1.1k+ starts in 6 weeks (top 10 trending libraries). They have also launched the cloud beta that allows customers to pay-per-query and reduces costs due to pooled resources (<a href="https://q78175g1wwa.typeform.com/to/d0PEuRPC">join waiting list</a>). Lastly, they are building a community of search enthusiasts tackling different problems (<a href="https://join.slack.com/t/marqo-community/shared_invite/zt-1d737l76e-u~b3Rvey2IN2nGM4wyr44w">Slack</a>).
