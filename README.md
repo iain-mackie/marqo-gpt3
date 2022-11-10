@@ -25,7 +25,11 @@ I wanted to build a fun search application within minutes to show the ease and p
 
 The plan is to use Marqo's search to provide useful context for a generation algorithm; we use OpenAI's GPT3 API (<a href="https://openai.com/api/">link</a>). This is more formally called "retrieval-augmented generation" and helps with generation tasks that require specific knowledge that the model has not seen during training. For example, company-specific documents and news data that's "in the future".  
 
-Thus, we can see the problem when we ask GPT3, "What is happening in business today?" It does not know and thus generates a generic response:
+<p align="center">
+    <img src="https://github.com/iain-mackie/marqo-gpt3/blob/main/assets/overview.png" alt="Overview" width="500" height="500" >
+
+
+Thus, we can see the problem when we solely ask GPT3, "What is happening in business today?" It does not know and thus generates a generic response:
 ```
 Question: What is happening in business today?
 
