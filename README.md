@@ -96,7 +96,7 @@ There are a few major stories in business today. Firstly, Facebook-owner Meta is
 
 You'll notice that using Marqo to add relevant and temporally correct context means we can build a news summarisation application with ease. So instead of wrong and vague answers, we get factually-grounded summaries based on retrieved facts such as:
 <ol>
-  <li>C"Facebook-owner Meta is cutting 11,000 staff"</li>
+  <li>"Facebook-owner Meta is cutting 11,000 staff"</li>
   <li>"German insurer Allianz has posted better-than-expected quarterly results"</li>
   <li>"Made.com has gone into administration"</li>
 </ol>
