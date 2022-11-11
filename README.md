@@ -90,9 +90,9 @@ question = 'What is happening in business today?'
 date = '2022-11-09'
 results = mq.index(DOC_INDEX_NAME).search(
 					q=question,
-                                        searchable_attributes=['Title', 'Description'],
+                    searchable_attributes=['Title', 'Description'],
 					filter_string=f"date:{date}"
-                                        limit=5)
+                    limit=5)
 ```  
 
 Next, we insert Marqo's search results into GPT3 prompt as context, and we try generating an answer again::
