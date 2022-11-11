@@ -1,4 +1,4 @@
-# Using Marqo to power topical news summarisation
+# Using Marqo to Power News Summarisation
 
 ## Who am I?
 
