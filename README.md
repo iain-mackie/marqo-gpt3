@@ -4,7 +4,7 @@
 
 My name is Iain Mackie and I lead NLP investments at <a href="https://thecreatorfund.com/">Creator Fund</a> and previously worked in Quant trading. I am currently finishing my PhD in neural search systems at the <a href="https://grilllab.ai/">University of Glasgow</a> and recently won the $500k grand prize at the <a href="https://www.digit.fyi/next-gen-ai-assistant-from-glasgow-uni-wins-amazon-taskbot-challenge/">Alexa TaskBot Challenge</a>.🤖 
 
-Given my passion for startups and NLP...I could not be happier to announce Creator Fund's £650,000 Pre-Seed investment into Marqo. Creator Fund (European Deep Tech) is joined by Blackbird (top VC in Australia/NZ), Activation Fund (US SaaS VC), and many high-profile angels. A global start to a global journey! 🚀    
+Today we announce that Creator Fund has led a £660,000 Pre-Seed investment into Marqo. Marqo allows search engines to think like humans through neural search. The Melbourne-based company is led by two senior engineers from Amazon Robotics and Australia.
 
 ## What is neural search?
 
