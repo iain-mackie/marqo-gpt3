@@ -2,13 +2,13 @@
 
 ## Who am I?
 
-My name is Iain Mackie and I lead NLP investments at <a href="https://thecreatorfund.com/">Creator Fund</a> and previously worked in Quant trading. I am currently finishing my PhD in neural search systems at the University of Glasgow and recently won the $500k grand prize at the <a href="https://www.digit.fyi/next-gen-ai-assistant-from-glasgow-uni-wins-amazon-taskbot-challenge/">Alexa TaskBot Challenge</a>.🤖 
+My name is Iain Mackie and I lead NLP investments at <a href="https://thecreatorfund.com/">Creator Fund</a> and previously worked in Quant trading. I am currently finishing my PhD in neural search systems at the <a href="https://grilllab.ai/">University of Glasgow</a> and recently won the $500k grand prize at the <a href="https://www.digit.fyi/next-gen-ai-assistant-from-glasgow-uni-wins-amazon-taskbot-challenge/">Alexa TaskBot Challenge</a>.🤖 
 
 Given my passion for startups and NLP...I could not be happier to announce Creator Fund's £650,000 Pre-Seed investment into Marqo. Creator Fund (European Deep Tech) is joined by Blackbird (top VC in Australia/NZ), Activation Fund (US SaaS VC), and many high-profile angels. A global start to a global journey! 🚀    
 
 ## What is neural search?
 
-Search, or information retrieval, is the study of retrieving relevant information given a user query. The most obvious example is Google, where a user inputs a query, and Google will return a ranked list of web documents. Search is complex because:
+Search, or information retrieval, is the study of retrieving relevant information given a user query. The most obvious example is Google, where a user inputs a query and Google will return a ranked list of web documents. Search is complex because:
 <ol>
   <li>Indexes can have millions or billions of documents.</li>
   <li>Judgements mapping user requests can be incredibly sparse.</li>
@@ -18,13 +18,6 @@ Search, or information retrieval, is the study of retrieving relevant informatio
 Historically due to scale and computations, search systems were based on inverted indexes, where each word is stored in a database, making it easy to run simple algorithms over billions of documents. For example, for the query "good startup", search algorithms such as BM25 would return results with "good" and "startup" words. However, with the explosion of large language models (LLMs) with billions of parameters (SBERT, BERT, T5, GPT3, etc.), neural search systems have vastly improved search effectiveness. Specifically,  LLMs can draw semantic connections between similar terms, i.e. between "good startup" and words like "scalable", "strong founders", and "high growth". In addition, there has also been an explosion in multimodal neural models (CLIP, DALLE, etc.) that allow for aligned multimodal searches. So, for example, you could search for images or videos that align with our "good startup" (maybe the picture of Marqo below!). 
 
 The problem is that multimodal search can be extremely beneficial in many multimodal applications (search engines, image recommendation, product search, etc.). Still, effective and robust search systems require technical experts to implement and keep up-to-date with this fast-moving search environment. Now that's where Marqo comes in...
-
-
-Neural search uses new machine learning models with billions of parameters, allowing vastly
-better search results and future search applications. For example, using traditional search technology, if
-the user searched for a "good startup", the database would only return results with "good" and
-"startup" words. Neural search would draw semantic connections between similar terms, i.e. between
-"good startup" and words like "scalable", "strong founders" and "high growth". 
 
 ## What is Marqo?
 
