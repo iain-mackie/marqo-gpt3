@@ -98,24 +98,24 @@ results = mq.index(DOC_INDEX_NAME).search(
 Next, we insert Marqo's search results into GPT3 prompt as context, and we try generating an answer again::
 ```
 Background: 
-Source 0) Facebook-owner Meta to cut 11,000 staff || Meta, which owns Facebook, Instagram and WhatsApp, has announced that it will cut 13% of its workforce.... 
-Source 1) Allianz beats quarterly profit expectations, posts rosier 2022 outlook || German insurer Allianz on Wednesday posted a better-than-expected 17% rise in third-quarter net profit...
-Source 2) Furniture firm Made collapse: Customers in the dark over refunds || Online furniture firm Made.com has gone into administration, leading to hundreds of job losses and leaving customers in the dark over refunds.... 
-Source 3) Georgia race goes to run-off as fight for US Senate neck-and-neck || Results are being declared in the US midterm elections, with control of Congress hanging in the balance.... 
-Source 4) Tesla stock hits 2-year low after Musk sells $4 bln worth of shares || Tesla Inc (TSLA.O) shares slid to their lowest level in nearly two years on Wednesday after Chief Executive Elon Musk sold $3.95 billion worth of shares in the electric-vehicle maker.. 
+Source 0) M&S warns of 'gathering storm' as shoppers squeezed || Marks and Spencer has warned of a "gathering storm" of higher costs for retailers and pressure on household budgets as it reported a fall in profits for the first half of the year. The High Street giant said trading would become "more challenging" after it revealed its profits dropped by 24%. It said "all parts" of retail would be affected... 
+Source 1) Facebook-owner Meta to cut 11,000 staff || Meta, which owns Facebook, Instagram and WhatsApp, has announced that it will cut 13% of its workforce. The first mass lay-offs in the firm's history will result in 11,000 employees, from a worldwide headcount of 87,000, losing their jobs. Meta chief executive Mark Zuckerberg said the cuts were "the most difficult changes we've made in Meta's history". The news follows... 
+Source 2) Allianz beats quarterly profit expectations, posts rosier 2022 outlook || German insurer Allianz on Wednesday posted a better-than-expected 17% rise in third-quarter net profit, helped by strength at its property and casualty division, and gave a more optimistic full-year outlook.... 
+Source 3) Georgia race goes to run-off as fight for US Senate neck-and-neck || Results are being declared in the US midterm elections, with control of Congress hanging in the balance. Republicans are likely to take control of the House of Representatives but the Senate fight is on a knife-edge. The race for the Senate seat in Georgia, which could determine the outcome, will not be decided until a runoff election on 6 December.... 
+Source 4) Tesla stock hits 2-year low after Musk sells $4 bln worth of shares || Tesla Inc (TSLA.O) shares slid to their lowest level in nearly two years on Wednesday after Chief Executive Elon Musk sold $3.95 billion worth of shares in the electric-vehicle maker. The shares were down 6.1% at $179.66 in afternoon trading. Musk's latest share sale fueled jitters about the fallout of his Twitter buy on the world's most valuable automaker, analysts... 
 
 
 Question: What is happening in business today?
 
 Answer:
-There are a few major stories in business today. Firstly, Facebook-owner Meta is cutting 11,000 staff. This is the first mass lay-off in the company's history and will result in a 13% reduction of the worldwide headcount. Secondly, German insurer Allianz has posted better-than-expected quarterly results and given a more optimistic full-year outlook. Finally, online furniture firm Made.com has gone into administration, leading to hundreds of job losses and leaving customers in the dark over refunds.
+There are a few major stories happening in business today. Firstly, Marks and Spencer has warned of a "gathering storm" of higher costs for retailers and pressure on household budgets. Secondly, Facebook-owner Meta is cutting 11,000 staff in its first mass lay-offs. And finally, Tesla stock has hit a 2-year low after CEO Elon Musk sold $4 billion worth of shares.
 ```
 
 Sucess! You'll notice that using Marqo to add relevant and temporally correct context means we can build a news summarisation application with ease. So instead of wrong and vague answers, we get factually-grounded summaries based on retrieved facts such as:
 <ol>
-  <li>"Facebook-owner Meta is cutting 11,000 staff"</li>
-  <li>"German insurer Allianz has posted better-than-expected quarterly results"</li>
-  <li>"Made.com has gone into administration"</li>
+  <li>Marks and Spencer has warned of a "gathering storm" of higher costs for retailers</li>
+  <li>Facebook-owner Meta is cutting 11,000 staff</li>
+  <li>Tesla stock has hit a 2-year low after CEO Elon Musk sold $4 billion worth of shares</li>
 </ol>
 
 Full code: <a href="https://github.com/iain-mackie/marqo-gpt3/blob/main/main.py">here</a> (you'll need GPT3 API token)

@@ -3,8 +3,8 @@ MARQO_DOCUMENTS = [
         '_id': '1',
         'date': '2022-11-09',
         'website': 'www.bbc.co.uk',
-        'Title': 'Furniture firm Made collapse: Customers in the dark over refunds',
-        'Description': 'Online furniture firm Made.com has gone into administration, leading to hundreds of job losses and leaving customers in the dark over refunds. \nThe administrators PWC said there will be 399 job losses, mostly redundancies.\nThe firm\'s collapse leaves thousands of customers facing uncertainty over outstanding furniture orders.\nAround 12,000 UK orders are outstanding and customers will not get a refund from the firm, but may be able to claim one from their bank or card provider.',
+        'Title': 'M&S warns of \'gathering storm\' as shoppers squeezed',
+        'Description': 'Marks and Spencer has warned of a "gathering storm" of higher costs for retailers and pressure on household budgets as it reported a fall in profits for the first half of the year. The High Street giant said trading would become "more challenging" after it revealed its profits dropped by 24%. It said "all parts" of retail would be affected by the UK\'s economic climate, adding unviable firms would go bust. But M&S said its business could "prove more resilient" due to its clientele. Many UK businesses are being hit by rising energy bills, wage costs and raw materials prices. Consumers are also cutting back their spending, with the Bank of England warning the UK is facing its longest recession since records began. M&S said the "combined impacts of the cost-of-living squeeze" and the increased cost of doing business was "creating pressure on margins industry-wide".'
     },
     {
         '_id': '2',
