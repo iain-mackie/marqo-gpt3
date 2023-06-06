@@ -34,7 +34,7 @@ Marqo's open-source Github <a href="https://github.com/marqo-ai/marqo">Github</a
 
 Now for the fun bit...
 
-I wanted to build a fun search application within minutes to show the ease and power of Marqo. I decided to build a news summarisation application, i.e. answer questions like "What is happening in business today?" that synthesises example news corpus (<a href="https://github.com/iain-mackie/marqo-gpt3/blob/main/assets/news.py">link</a>).
+I wanted to build a fun search application within minutes to show the ease and power of Marqo. I decided to build a news summarisation application, i.e. answer questions like "What is happening in business today?" that synthesises example news corpus (<a href="https://github.com/iain-mackie/marqo-gpt3/blob/main/news.py">link</a>).
 
 The plan is to use Marqo's search to provide useful context for a generation algorithm; we use OpenAI's GPT3 API (<a href="https://openai.com/api/">link</a>). This is more formally called "retrieval-augmented generation" and helps with generation tasks that require specific knowledge that the model has not seen during training. For example, company-specific documents and news data that's "in the future". Overview of what we're planning: 
 
